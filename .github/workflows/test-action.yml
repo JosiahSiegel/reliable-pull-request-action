@@ -8,7 +8,6 @@ on:
 jobs:
   test-action:
     name: Test create PR on ${{ matrix.os }}
-    permissions: write-all
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
