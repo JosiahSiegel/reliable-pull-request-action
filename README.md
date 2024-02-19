@@ -25,7 +25,7 @@ jobs:
 
       - name: Create Pull Request
         id: create_pr
-        uses: josiahsiegel/reliable-pull-request-action@v1.0.0
+        uses: JosiahSiegel/reliable-pull-request-action@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
