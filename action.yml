@@ -25,10 +25,12 @@ inputs:
 outputs:
   PRURL:
     description: 'The URL of the created pull request'
+    value: ${{ steps.create_pr.outputs.PR_URL }}
 runs:
   using: 'composite'
   steps:
     - name: Create Pull Request
+      id: create_pr
       shell: bash
       run: bash create-pr.sh
       env:

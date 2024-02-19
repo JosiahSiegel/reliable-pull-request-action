@@ -2,11 +2,8 @@ name: Test Action
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - 'main'
 
 jobs:
   test-action:
@@ -30,7 +27,7 @@ jobs:
           targetBranch: 'main'
           body: 'This is an automated pull request.'
           labels: 'invalid,wontfix'
-          assignees: 'octocat'
+          assignees: ${{ github.actor }}
 
       - name: Output PR URL
         run: echo "The PR URL is ${{ steps.create_pr.outputs.PRURL }}"
