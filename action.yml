@@ -38,3 +38,4 @@ runs:
         INPUT_BODY: ${{ inputs.body }}
         INPUT_LABELS: ${{ inputs.labels }}
         INPUT_ASSIGNEES: ${{ inputs.assignees }}
+        GITHUB_OUTPUT: ${{ github.output }}
