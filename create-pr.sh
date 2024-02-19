@@ -7,10 +7,10 @@ PR_OUTPUT=$(gh pr create \
   --base "$INPUT_TARGETBRANCH" \
   --head "$INPUT_SOURCEBRANCH" \
   --label "$INPUT_LABELS" \
-  --assignee "$INPUT_ASSIGNEES")
+  --assignee "$INPUT_ASSIGNEES" 2>&1)
 
 # Extract PR URL from the output
 PR_URL=$(echo "$PR_OUTPUT" | grep -o 'https://github.com/[^ ]*')
 
 # Set the PR URL as the output
-echo "name=$PR_URL" >> $GITHUB_OUTPUT
+echo "PR_URL=$PR_URL" >> $GITHUB_OUTPUT
