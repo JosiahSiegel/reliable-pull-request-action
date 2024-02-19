@@ -13,4 +13,4 @@ PR_OUTPUT=$(gh pr create \
 PR_URL=$(echo "$PR_OUTPUT" | grep -o 'https://github.com/[^ ]*')
 
 # Set the PR URL as the output
-echo "::set-output name=PRURL::$PR_URL"
+echo "name=$PR_URL" >> $GITHUB_OUTPUT
