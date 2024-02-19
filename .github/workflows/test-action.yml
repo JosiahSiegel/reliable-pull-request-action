@@ -22,6 +22,8 @@ jobs:
       - name: Create Pull Request
         id: create_pr
         uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: 'Automated Pull Request'
           sourceBranch: ${{ github.ref_name }}
