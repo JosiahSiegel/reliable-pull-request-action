@@ -30,11 +30,17 @@ runs:
   steps:
     - name: Create Pull Request
       shell: bash
-      run: bash create-pr.sh
-      env:
-        INPUT_TITLE: ${{ inputs.title }}
-        INPUT_SOURCEBRANCH: ${{ inputs.sourceBranch }}
-        INPUT_TARGETBRANCH: ${{ inputs.targetBranch }}
-        INPUT_BODY: ${{ inputs.body }}
-        INPUT_LABELS: ${{ inputs.labels }}
-        INPUT_ASSIGNEES: ${{ inputs.assignees }}
+      run: |
+        PR_OUTPUT=$(gh pr create \
+        --title "${{ inputs.title }}" \
+        --body "${{ inputs.body }}" \
+        --base "${{ inputs.targetBranch }}" \
+        --head "${{ inputs.sourceBranch }}" \
+        --label "${{ inputs.labels }}" \
+        --assignee "${{ inputs.assignees }}")
+
+        # Extract PR URL from the output
+        PR_URL=$(echo "$PR_OUTPUT" | grep -o 'https://github.com/[^ ]*')
+
+        # Set the PR URL as the output
+        echo "name=$PR_URL" >> $GITHUB_OUTPUT
