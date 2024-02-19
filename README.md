@@ -1,4 +1,6 @@
-# Remote Branch Action
+# Reliable Pull Request Action
+
+> *Reliable: Only uses built-in GitHub runner commands
 
 [![Test Action](https://github.com/JosiahSiegel/reliable-pull-request-action/actions/workflows/test-action.yml/badge.svg)](https://github.com/JosiahSiegel/reliable-pull-request-action/actions/workflows/test-action.yml)
 
