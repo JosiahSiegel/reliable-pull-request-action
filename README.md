@@ -1,6 +1,6 @@
-# Reliable Pull Request Action
+# Reliable* Pull Request Action
 
-> *Reliable: Only uses built-in GitHub runner commands
+> *Only uses built-in GitHub runner commands
 
 [![Test Action](https://github.com/JosiahSiegel/reliable-pull-request-action/actions/workflows/test-action.yml/badge.svg)](https://github.com/JosiahSiegel/reliable-pull-request-action/actions/workflows/test-action.yml)
 
@@ -75,5 +75,9 @@ outputs:
 
 The following permissions must be set for the repository:
   * `Settings > Actions > General`
-  * ![](gh_workflow_permissions.png)
-*Alternative is to set [jobs.<job_id>.permissions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idpermissions)*
+     * Workflow permissions
+       1. Read and write permissions
+       2. Allow GitHub Actions to create and approve pull requests
+       3. Save
+
+>*Alternative is to set [jobs.<job_id>.permissions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idpermissions)*
