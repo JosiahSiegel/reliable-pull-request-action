@@ -25,7 +25,9 @@ jobs:
           title: 'Automated Pull Request'
           sourceBranch: ${{ github.ref_name }}
           targetBranch: 'main'
-          body: 'This is an automated pull request.'
+          body: |
+            ## Merge ${{ github.ref_name }}
+            This PR contains the changes from ${{ github.ref_name }}.
           labels: 'invalid,wontfix'
           assignees: ${{ github.actor }}
 
