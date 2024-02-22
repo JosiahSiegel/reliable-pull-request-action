@@ -32,12 +32,7 @@ runs:
     - name: Create Pull Request
       id: create_pr
       shell: bash
-      run: |
-        cd ${{github.action_path}}
-        pwd
-        ls -halt
-        chmod +x ./create-pr.sh
-        ./create-pr.sh
+      run: bash ${{github.action_path}}/create-pr.sh        
       env:
         INPUT_TITLE: ${{ inputs.title }}
         INPUT_SOURCEBRANCH: ${{ inputs.sourceBranch }}
