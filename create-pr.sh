@@ -9,6 +9,9 @@ PR_OUTPUT=$(gh pr create \
   --label "$INPUT_LABELS" \
   --assignee "$INPUT_ASSIGNEES" 2>&1)
 
+# Debug
+echo "$PR_OUTPUT"
+
 # Extract PR URL from the output
 PR_URL=$(echo "$PR_OUTPUT" | grep -o 'https://github.com/[^ ]*')
 
