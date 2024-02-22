@@ -33,6 +33,7 @@ runs:
       id: create_pr
       shell: bash
       run: |
+        cd ${{github.action_path}}
         pwd
         ls -halt
         chmod +x ./create-pr.sh
