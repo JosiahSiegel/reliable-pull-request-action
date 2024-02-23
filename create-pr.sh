@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pwd
+
 # Create Pull Request and capture the output
 PR_OUTPUT=$(gh pr create \
   --title "$INPUT_TITLE" \
