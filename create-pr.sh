@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pwd
-
 # Create Pull Request and capture the output
 PR_OUTPUT=$(gh pr create \
   --title "$INPUT_TITLE" \
@@ -10,9 +8,6 @@ PR_OUTPUT=$(gh pr create \
   --head "$INPUT_SOURCEBRANCH" \
   --label "$INPUT_LABELS" \
   --assignee "$INPUT_ASSIGNEES" 2>&1)
-
-# Debug
-echo "$PR_OUTPUT"
 
 # Extract PR URL from the output
 PR_URL=$(echo "$PR_OUTPUT" | grep -o 'https://github.com/[^ ]*')
